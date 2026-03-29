@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>X Clone</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #000;
+      color: #fff;
+    }
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: #000;
+      border-bottom: 1px solid #333;
+      padding: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+    #searchBar {
+      padding: 8px 15px;
+      border-radius: 20px;
+      border: 1px solid #555;
+      width: 60%;
+      max-width: 400px;
+      background: #111;
+      color: #fff;
+    }
+    main {
+      margin-top: 70px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 10px;
+    }
+    .post {
+      border-bottom: 1px solid #333;
+      padding: 15px 0;
+      display: flex;
+      gap: 10px;
+    }
+    .profile-pic {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+    .post-content {
+      flex: 1;
+    }
+    .post-content h3 {
+      margin: 0;
+      font-size: 16px;
+      color: #1DA1F2;
+    }
+    .post-content p {
+      margin: 5px 0;
+      font-size: 14px;
+    }
+    .post-content img {
+      margin-top: 8px;
+      max-width: 100%;
+      border-radius: 10px;
+    }
+    footer {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background: #000;
+      border-top: 1px solid #333;
+      padding: 10px;
+      text-align: center;
+    }
+    audio {
+      width: 90%;
+    }
+    @media (max-width: 600px) {
+      #searchBar {
+        width: 80%;
+      }
+      .profile-pic {
+        width: 40px;
+        height: 40px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <input type="text" id="searchBar" placeholder="Search posts...">
+  </header>
+
+  <main id="feed">
+    <div class="post">
+      <img src="f1ff94bd593a2bbe1078c530004078d7.webp" class="profile-pic">
+      <div class="post-content">
+        <h3>@Cicada</h3>
+        <p>Tbh gay kissing in class is wild gng.</p>
+        <img src="20240404_091825_1.jpg" alt="Project">
+      </div>
+    </div>
+    <div class="post">
+      <img src="cbsn-fusion-legal-analysis-of-the-2nd-batch-of-jeffrey-epstein-docs-thumbnail-2578129-640x360.webp" class="profile-pic">
+      <div class="post-content">
+        <h3>@jeffry_episten</h3>
+        <p>Can't wait for ya to arrive at my island!. </p>
+        <img src="20240404_091904.jpg" alt="Weather">
+      </div>
+    </div>
+    
+      </div>
+    </div>
+   
+    </div>
+  </main>
+
+  <footer>
+    <audio controls>
+      <source src="" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+  </footer>
+
+  <script>
+    const searchBar = document.getElementById('searchBar');
+    const posts = document.querySelectorAll('.post');
+
+    searchBar.addEventListener('input', function() {
+      const query = this.value.toLowerCase();
+      posts.forEach(post => {
+        const text = post.innerText.toLowerCase();
+        post.style.display = text.includes(query) ? 'flex' : 'none';
+      });
+    });
+  </script>
+</body>
+</html>
+
